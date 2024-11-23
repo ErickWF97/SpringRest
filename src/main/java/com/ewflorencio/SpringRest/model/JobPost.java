@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import java.security.PrivilegedAction;
 import java.util.List;
 
 @Data
@@ -21,4 +22,5 @@ public class JobPost {
     private String postDesc;
     private Integer reqExperience;
     private List<String> postTechStack;
+    private Integer seilaFc;
 }

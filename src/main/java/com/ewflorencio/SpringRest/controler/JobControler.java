@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
 @RequestMapping("/jobPosts")
+@RestController
 public class JobControler {
 
     @Autowired
@@ -22,6 +22,11 @@ public class JobControler {
     @GetMapping("/{postId}")
     public JobPost getJob(@PathVariable int postId){
         return service.getJob(postId);
+    }
+
+    @GetMapping("/keyword/{keyword}")
+    public List<JobPost> searchByKeyword(@PathVariable("keyword") String keyword){
+        return service.search(keyword);
     }
 
     @PostMapping
